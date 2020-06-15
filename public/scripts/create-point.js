@@ -44,7 +44,7 @@ for (const item of itemsToCollect) {
   item.addEventListener("click", handleSelectedItem);
 }
 
-const collectedItems = document.querySelector("input[name = items]");
+const collectedItems = document.querySelector("input[name=items]");
 
 let selectedItems = [];
 
@@ -54,6 +54,7 @@ function handleSelectedItem(event) {
   itemLi.classList.toggle("selected");
 
   const itemId = itemLi.dataset.id;
+  // console.log('ITEM ID:', itemId);
 
   const alreadySelected = selectedItems.findIndex((item) => {
     const itemFound = item == itemId;
@@ -69,6 +70,7 @@ function handleSelectedItem(event) {
   } else {
     selectedItems.push(itemId);
   }
+  // console.log('SELECTED ITEMS:', selectedItems);
 
   collectedItems.value = selectedItems;
 }
